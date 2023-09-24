@@ -20,9 +20,8 @@ export const purchaseProducts = async (req, res) => {
 
       if (product && product.price && item.quantity) {
         const purchaseRecord = new PurchaseHistory({
-          username: user.email, // Assuming 'email' is the user's unique identifier
-          productName: product.name, // Assuming 'name' is the product name field
-          // Add more fields to the purchase history record if needed
+          username: user.email, 
+          productName: product.name, 
         });
 
         await purchaseRecord.save();
