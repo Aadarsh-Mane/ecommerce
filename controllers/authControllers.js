@@ -54,6 +54,23 @@ export const login = async (req, res) => {
       res.status(500).json({ message: 'Server error' });
     }
   };
+
+  export const updateAddress = async(req, res) => {
+
+    const {email,newaddress}=req.body;
+    try {
+      const user=await User.find({email})
+      if (!user) {
+        return res.status(404).json({ message: 'User not found' });
+      }
+      user.address = newaddress;
+  
+      // Save the updated user document
+      await user.save();
+    } catch (error) {
+      
+    }
+  }
   export const resetPassword = async (req, res) => {
     const { email, newPassword } = req.body;
   

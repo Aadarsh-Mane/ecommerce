@@ -70,7 +70,7 @@ export const searchProductsByName = async (req, res) => {
   try {
     const { name } = req.query;
 
-    // Check if a valid name query parameter is provided
+    // Check if a valid name 
     if (!name) {
       return res.status(400).json({ message: 'Invalid search parameter. Please provide a name.' });
     }

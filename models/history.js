@@ -9,7 +9,7 @@ const purchaseHistorySchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  // Add more fields as needed
+  
 });
 
 const PurchaseHistory = mongoose.model('PurchaseHistory', purchaseHistorySchema);
